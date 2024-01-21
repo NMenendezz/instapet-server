@@ -112,7 +112,7 @@ export async function login (req, res) {
 }
 
 export async function forgetPassword (req, res) {
-  const BASEURL = process.env.BASEURL
+  const CLIENT_URL = process.env.CLIENT_URL
   const PORT = process.env.PORT
   const PORT_CLIENT = process.env.PORT_CLIENT
   const { email } = req.body
@@ -143,8 +143,8 @@ export async function forgetPassword (req, res) {
       from: process.env.MAIL_USERNAME,
       to: user.email,
       subject: '¿Has olvidado tu contraseña?',
-      text: `Restablecer contraseña: ${BASEURL}:${PORT_CLIENT}/reset-password/${token}`,
-      html: emailTemplate(`${BASEURL}:${PORT_CLIENT}/reset-password/${token}`)
+      text: `Restablecer contraseña: ${CLIENT_URL}:${PORT_CLIENT}/reset-password/${token}`,
+      html: emailTemplate(`${CLIENT_URL}:${PORT_CLIENT}/reset-password/${token}`)
     }
 
     await transporter.sendMail(info)
@@ -153,7 +153,7 @@ export async function forgetPassword (req, res) {
       .status(201)
       .json({
         message: 'A reset password link has been sent to your email',
-        link: `${BASEURL}:${PORT}/reset-password/${token}`
+        link: `${CLIENT_URL}:${PORT}/reset-password/${token}`
       })
   } catch (error) {
     console.error('Error:', error.message)
