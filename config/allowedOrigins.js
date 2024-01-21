@@ -1,6 +1,7 @@
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://instapet-client-jyujzy0aa-nmenendezz.vercel.app'
+  'https://instapet-client.vercel.app/login',
+  'https://instapet-client-git-main-nmenendezz.vercel.app/login'
 ]
 
 export default allowedOrigins
