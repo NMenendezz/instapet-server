@@ -1,0 +1,96 @@
+### Register user with 'personal' profile
+POST http://localhost:1234/api/users/register
+content-type: application/json
+
+{
+  "name": "shauny",
+  "username": "shauny",
+  "email": "shauny@gmail.com",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "profile": "personal"
+}
+
+### Register user with 'profesional' profile
+POST http://localhost:1234/api/users/register
+content-type: application/json
+
+{
+  "name": "Test",
+  "username": "test",
+  "email": "test@email.es",
+  "password": "123456",
+  "confirmPassword": "123456",
+  "profile": "profesional",
+  "address": {
+    "street": "calle",
+    "city": "Ciudad",
+    "zipCode": 10000,
+    "country": "spain"
+  }
+}
+
+### Login user with 'personal' profile
+POST http://localhost:1234/api/users/login
+content-type: application/json
+
+{
+  "input": "Shauny",
+  "password": "1234567"
+}
+
+### Login user with 'profesional' profile
+POST http://localhost:1234/api/users/login
+content-type: application/json
+
+{
+  "input": "test",
+  "password": "123456"
+}
+
+### Forget password
+POST http://localhost:1234/api/users/forget-password
+content-type: application/json
+
+{
+  "email": "nchmnndzlpz@gmail.com"
+}
+
+### Reset password
+POST http://localhost:1234/api/users/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NTMwM2U5Zjk3Mzc4ZTFmZTkxMGI3NGMiLCJpYXQiOjE2OTc3MDc4NTYsImV4cCI6MTY5NzcwODQ1Nn0.teedRHgqOz87z3LJ7wg8q8kB8AvTdFfxk_lEWKAiHDg
+content-type: application/json
+
+{
+  "password": "123456",
+  "confirmPassword": "123456"
+}
+
+### Logout
+POST http://localhost:1234/api/users/logout
+
+### Follow user
+POST http://localhost:1234/api/users/follow/652faca5a63a1e87d8ed0a55
+
+### Update user
+PATCH http://localhost:1234/api/users/update/6544c81c90831c86769c355d
+content-type: application/json
+
+{
+  "name": "shauny",
+  "username": "laurashauny",
+  "password": "123456",
+  "newPassword": "123456",
+  "confirmNewPassword": "123456",
+  "email": "shauny@email.es",
+  "profile": "personal"
+}
+
+### Get user information
+GET http://localhost:1234/api/users/profile/nacho
+
+### Delete user
+DELETE http://localhost:1234/api/users/delete/652fc482a5c430d083c52e81
+content-type: application/json
+
+### Search users
+GET http://localhost:1234/api/users/search?q=Nacho

@@ -1,0 +1,74 @@
+### Get post by the ID 
+GET http://localhost:1234/api/posts/6532a892929368a1d583aea2
+
+### Get user feed
+GET http://localhost:1234/api/posts/feed
+
+### Get user 'personal' feed
+GET http://localhost:1234/api/posts/feed
+Content-Type: application/json
+
+{
+    "profileType": "personal"
+}
+
+### Get user 'profesional' feed
+GET http://localhost:1234/api/posts/feed
+Content-Type: application/json
+
+{
+    "profileType": "profesional"
+}
+
+### Get user 'personal' feed
+GET http://localhost:1234/api/posts/feed
+Content-Type: application/json
+
+{
+    "profileType": "personal"
+}
+
+### Get user 'profesional' feed
+GET http://localhost:1234/api/posts/feed
+Content-Type: application/json
+ 
+{
+    "profileType": "profesional"
+}
+
+### Get all posts by username
+GET http://localhost:1234/api/posts/user/nacho
+
+### Create new post
+POST http://localhost:1234/api/posts/create
+Content-Type: application/json
+
+{
+    "author": "65633be0cdbbec4fad2383ef",
+    "content": "Post de prueba 1"
+}
+
+### Update a post
+PATCH http://localhost:1234/api/posts/6544d21dc6bd32f6c1e4b906
+Content-Type: application/json
+
+{
+    "content": "Contenido cambiado"
+}
+
+### Delete a post
+DELETE http://localhost:1234/api/posts/delete/6532b2bc929368a1d583aeac
+
+### Fav / Unfav post
+POST http://localhost:1234/api/posts/fav/652edb68a299150a6dbf2008
+
+### Reply post
+POST http://localhost:1234/api/posts/reply/652edb68a299150a6dbf2008
+Content-Type: application/json
+
+{
+    "text": "Esta es una respuesta"
+}
+
+### Search posts
+GET http://localhost:1234/api/posts/search?q=prueba
